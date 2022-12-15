@@ -60,16 +60,7 @@ public class CustomList : IList
 
     public bool Contains(ref int[] array, int value)
     {
-        for (var i = 0; i < array.Length; i++)
-        {
-            var a = array[i];
-            if (a == value)
-            {
-                return true;
-            }
-        }
-
-        return false;
+        return array.Any(a => a == value);
     }
 
     public int IndexOf(ref int[] array, int value)
