@@ -9,7 +9,7 @@ public class RemoveAtTest
     public void RemoveAt_ShouldReturnCorrectResult()
     {
         int[] myArray = { 1, 4, 6, 2};
-        IList customList = new CustomList();
+        IListCustom customList = new RefCustomList();
         
         customList.RemoveAt(ref myArray, 2);
         var actual = myArray.Length;

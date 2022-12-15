@@ -1,6 +1,6 @@
 ﻿namespace TaskCustomList;
 
-public class CustomList : IList
+public class RefCustomList : IListCustom
 {
 
     public void Insert(ref int[] array, int value, int index)

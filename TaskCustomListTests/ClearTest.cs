@@ -9,7 +9,7 @@ public class ClearTest
     public void Clear_ReturnCorrectResult()
     {
         int[] myArray = { 1, 4, 6, 2};
-        IList customList = new CustomList();
+        IListCustom customList = new RefCustomList();
         
         customList.Clear(ref myArray);
         var actual = myArray.Length;

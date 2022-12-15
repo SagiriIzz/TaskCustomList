@@ -9,7 +9,7 @@ public class AddTest
     public void Add_ShouldReturnCorrectResult()
     {
         int[] myArray = { 1, 4, 6, 2};
-        IList customList = new CustomList();
+        IListCustom customList = new RefCustomList();
         
         customList.Add(ref myArray,  10);
         var actual = myArray[4];

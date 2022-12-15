@@ -9,7 +9,7 @@ public class InsertTest
     public void Insert_ShouldReturnCorrectResult()
     {
         int[] myArray = { 1, 4, 6, 2};
-        IList customList = new CustomList();
+        IListCustom customList = new RefCustomList();
         
         customList.Insert(ref myArray, 10, 1);
         var actual = myArray[1];

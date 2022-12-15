@@ -9,7 +9,7 @@ public class ContainsTest
     public void Contains_ShouldReturnTrue()
     {
         int[] myArray = { 1, 4, 6, 2};
-        IList customList = new CustomList();
+        IListCustom customList = new RefCustomList();
         
         var actual = customList.Contains(ref myArray, 6);;
         const bool expected = true;

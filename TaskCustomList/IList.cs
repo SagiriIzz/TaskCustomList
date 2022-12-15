@@ -1,6 +1,6 @@
 ﻿namespace TaskCustomList;
 
-public interface IList
+public interface IListCustom
 {
     void Add(ref int[] array, int value);
     void Clear(ref int[] array);
