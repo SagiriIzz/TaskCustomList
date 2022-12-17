@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ESH/5yEuyRmIiLeGvNI+DxIIP+qLTVFCVsuHXkC8RIG3Q3HzZDgIAVYe/KMM9iJguMYMLjRkGkI0X/BxkLmMVA==",
+  "dgSpecHash": "k2jPE2dHLsY/aBssYqSsWPiG4M2lJFmOQRFb7KDqIfY1tRhtdGDOxGib1z3v5Ah4vYXRfAw6oeaFzC9333BAiw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sagiri Izumi\\RiderProjects\\TaskCustomList\\TaskCustomList\\TaskCustomList.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Sagiri Izumi\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\Sagiri Izumi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\Sagiri Izumi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
