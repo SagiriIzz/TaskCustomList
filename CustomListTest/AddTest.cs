@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace TaskCustomListTests;
+namespace CustomListTest;
 
 [TestClass]
 public class AddTest

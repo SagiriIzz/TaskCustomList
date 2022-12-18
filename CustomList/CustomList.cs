@@ -4,37 +4,40 @@ namespace CustomList;
 
 public class CustomList: IList
 {
-    private readonly object?[] _array = new object?[10];
-    private int _count;
-    public CustomList()
-    {
-        _count = 0;
-    }
+    private object?[] _array = new object?[10];
     public int Add(object? value)
     {
-        if (_count < _array.Length)
-        {
-            _array[_count] = value;
-            _count++;
-            
-            return (_count - 1);
-        }
-        return -1;
-        
+       Insert(_array.Length, value);
+       return IndexOf(value);
     }
 
     public void Insert(int index, object? value)
     {
-        if ((_count + 1 <= _array.Length) && (index < _count) && (index >= 0))
+        var newArray = new object?[_array.Length +1];
+        newArray[index] = value;
+        for (int i = 0; i < index; i++)
         {
-            _count++;
-            for (var i = _count - 1; i > index; i--)
-            {
-                _array[i] = _array[i - 1];
-            }
-
-            _array[index] = value;
+            newArray[i] = _array[i];
         }
+
+        for (var i = index; i < _array.Length; i++)
+        {
+            newArray[i+1] = _array[i];
+        }
+
+        _array = newArray;
+    }
+    public int IndexOf(object? value)
+    {
+        for (var i = 0; i < _array.Length; i++)
+        {
+            var a = _array[i];
+            if (a == value)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
     public IEnumerator GetEnumerator()
     {
@@ -46,26 +49,19 @@ public class CustomList: IList
         throw new NotImplementedException();
     }
 
-    public int Count => _count;
+    public int Count => _array.Length;  
     public bool IsSynchronized { get; }
     public object SyncRoot { get; }
     
     public void Clear()
     {
-        _count = 0;
+        var newArray = new object?[0];
+        _array = newArray;
     }
 
     public bool Contains(object? value)
     {
-        throw new NotImplementedException();
-    }
-
-    public int IndexOf(object? value)
-    {
-        for (var i = 0; i < _count; i++)
-            if (_array[i] == value)
-                return i;
-        return -1;
+        return _array.Any(a => a == value);
     }
     public void Remove(object? value)
     {
