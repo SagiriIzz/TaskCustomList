@@ -4,11 +4,11 @@ namespace CustomList;
 
 public class CustomList: IList
 {
-    private object?[] _array = new object?[10];
+    private object?[] _array = Array.Empty<object?>();
     public int Add(object? value)
     {
        Insert(_array.Length, value);
-       return IndexOf(value);
+       return _array.Length + 1;
     }
 
     public void Insert(int index, object? value)
@@ -55,7 +55,7 @@ public class CustomList: IList
     
     public void Clear()
     {
-        var newArray = new object?[0];
+        var newArray = Array.Empty<object?>();
         _array = newArray;
     }
 
