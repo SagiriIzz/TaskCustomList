@@ -1,31 +1,40 @@
 ﻿using System.Collections;
-using System.Security.Cryptography.X509Certificates;
 
 namespace TaskCustomList;
 
 public class CustomList: IList
 {
-    public object?[] _array = new object?[10];
+    private object?[] _array = new object?[10];
     private int _count;
-    public CustomList(ref int[] array)
+    public CustomList()
     {
         _count = 0;
     }
+    public int Add(object? value)
+    {
+        if (_count < _array.Length)
+        {
+            _array[_count] = value;
+            _count++;
+            
+            return (_count - 1);
+        }
+        return -1;
+        
+    }
+
     public void Insert(int index, object? value)
     {
-        var newArray = new int[array.Length +1];
-        newArray[index] = value;
-        for (int i = 0; i < index; i++)
+        if ((_count + 1 <= _array.Length) && (index < _count) && (index >= 0))
         {
-            newArray[i] = array[i];
-        }
+            _count++;
+            for (var i = _count - 1; i > index; i--)
+            {
+                _array[i] = _array[i - 1];
+            }
 
-        for (var i = index; i < array.Length; i++)
-        {
-            newArray[i+1] = array[i];
+            _array[index] = value;
         }
-
-        array = newArray;
     }
     public IEnumerator GetEnumerator()
     {
@@ -40,22 +49,7 @@ public class CustomList: IList
     public int Count { get; }
     public bool IsSynchronized { get; }
     public object SyncRoot { get; }
-
-    public int Add(object? value)
-    {
-        if (_count < _array.Length)
-        {
-            _array[_count] = value;
-            _count++;
-            
-            return (_count - 1);
-        }
-        else
-        {
-            return -1;
-        }
-    }
-
+    
     public void Clear()
     {
         throw new NotImplementedException();
@@ -85,7 +79,7 @@ public class CustomList: IList
 
     public object? this[int index]
     {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
+        get => _array[index];
+        set => _array[index] = value;
     }
 }
