@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 
-namespace TaskCustomList;
+namespace CustomList;
 
 public class CustomList: IList
 {
-    private object?[] _array = new object?[10];
+    private readonly object?[] _array = new object?[10];
     private int _count;
     public CustomList()
     {
@@ -46,13 +46,13 @@ public class CustomList: IList
         throw new NotImplementedException();
     }
 
-    public int Count { get; }
+    public int Count => _count;
     public bool IsSynchronized { get; }
     public object SyncRoot { get; }
     
     public void Clear()
     {
-        throw new NotImplementedException();
+        _count = 0;
     }
 
     public bool Contains(object? value)
@@ -62,7 +62,10 @@ public class CustomList: IList
 
     public int IndexOf(object? value)
     {
-        throw new NotImplementedException();
+        for (var i = 0; i < _count; i++)
+            if (_array[i] == value)
+                return i;
+        return -1;
     }
     public void Remove(object? value)
     {

@@ -1,16 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 
-namespace TaskCustomListTests;
+namespace CustomListTest;
 
 [TestClass]
-public class AddTest
+public class CountTest
 {
     [TestMethod]
-    public void Add_ShouldReturnCorrectResult()
+    public void Count_ShouldReturnCorrectResult()
     {
         IList customList = new CustomList.CustomList{1,2,3,4,5};
         
-        var actual= customList.Add(2);
+        var actual = customList.Count;
         const int expected = 5;
         
         Assert.AreEqual(expected, actual);
