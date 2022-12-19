@@ -15,7 +15,7 @@ public class CustomList: IList
     {
         var newArray = new object?[_array.Length +1];
         newArray[index] = value;
-        for (int i = 0; i < index; i++)
+        for (var i = 0; i < index; i++)
         {
             newArray[i] = _array[i];
         }
@@ -40,17 +40,24 @@ public class CustomList: IList
     }
     public IEnumerator GetEnumerator()
     {
-        throw new NotImplementedException();
+        for (var i = 0; i < _array.Length; i++)
+        {
+            yield return _array[i];
+        }
     }
 
     public void CopyTo(Array array, int index)
     {
-        throw new NotImplementedException();
+        for (var i = 0; i < _array.Length; i++)
+        {
+            array.SetValue(_array[i], index);
+            index++;
+        }
     }
 
     public int Count => _array.Length;  
-    public bool IsSynchronized { get; }
-    public object SyncRoot { get; }
+    public bool IsSynchronized => false;
+    public object SyncRoot => null;
     
     public void Clear()
     {
@@ -83,8 +90,8 @@ public class CustomList: IList
         _array = newArray;
     }
 
-    public bool IsFixedSize { get; }
-    public bool IsReadOnly { get; }
+    public bool IsFixedSize => true;
+    public bool IsReadOnly => false;
 
     public object? this[int index]
     {
