@@ -8,7 +8,7 @@ public class CustomList: IList
     public int Add(object? value)
     {
        Insert(_array.Length, value);
-       return _array.Length + 1;
+       return _array.Length - 1;
     }
 
     public void Insert(int index, object? value)
@@ -31,8 +31,7 @@ public class CustomList: IList
     {
         for (var i = 0; i < _array.Length; i++)
         {
-            var a = _array[i];
-            if (a == value)
+            if ( _array[i] == value)
             {
                 return i;
             }
@@ -65,12 +64,23 @@ public class CustomList: IList
     }
     public void Remove(object? value)
     {
-        throw new NotImplementedException();
+
     }
 
     public void RemoveAt(int index)
     {
-        throw new NotImplementedException();
+        var newArray = new object?[_array.Length - 1];
+        for (var i = 0; i < index; i++)
+        {
+            newArray[i] = _array[i];
+        }
+
+        for (var i = index+1; i < _array.Length; i++)
+        {
+            newArray[i-1] = _array[i];
+        }
+
+        _array = newArray;
     }
 
     public bool IsFixedSize { get; }
