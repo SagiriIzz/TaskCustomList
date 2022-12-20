@@ -6,7 +6,14 @@ namespace CustomListTest;
 [TestClass]
 public class CustomListIntTest
 {
-    IList<int> customListInt = new CustomListInt {1, 2, 3, 4, 5};
+    IList<int> customListInt = new CustomListInt
+    {
+        1,
+        2,
+        3,
+        4,
+        5
+    };
 
     [TestMethod]
     public void Add_ShouldReturnCorrectResult()

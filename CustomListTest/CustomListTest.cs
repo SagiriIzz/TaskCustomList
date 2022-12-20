@@ -5,7 +5,14 @@ namespace CustomListTest;
 [TestClass]
 public class CustomListTest
 {
-    IList customList = new CustomList.CustomList {"Oliver", "Jack", "Harry", "Jacob", "Charley"};
+    IList customList = new CustomList.CustomList
+    {
+        "Oliver",
+        "Jack",
+        "Harry",
+        "Jacob",
+        "Charley"
+    };
 
     [TestMethod]
     public void Add_ShouldReturnCorrectResult()

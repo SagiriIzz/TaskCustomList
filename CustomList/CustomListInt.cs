@@ -5,7 +5,7 @@ namespace CustomList;
 public class CustomListInt : IList<int>
 {
     private int[] _array = Array.Empty<int>();
-    
+
     public IEnumerator<int> GetEnumerator()
     {
         foreach (var t in _array)
@@ -58,12 +58,13 @@ public class CustomListInt : IList<int>
         }
 
         _array = newArray;
-        
+
         return index != -1;
     }
 
     public int Count => _array.Length;
     public bool IsReadOnly => false;
+
     public int IndexOf(int item)
     {
         for (var i = 0; i < _array.Length; i++)

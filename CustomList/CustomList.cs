@@ -63,7 +63,6 @@ public class CustomList : IList
     public bool IsSynchronized => false;
     public object SyncRoot => null;
 
-
     public void Clear()
     {
         var newArray = Array.Empty<object?>();
