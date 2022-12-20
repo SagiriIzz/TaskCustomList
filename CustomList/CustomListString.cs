@@ -2,11 +2,11 @@
 
 namespace CustomList;
 
-public class CustomListInt : IList<int>
+public class CustomListString : IList<string>
 {
-    private int[] _array = Array.Empty<int>();
+    private string[] _array = Array.Empty<string>();
 
-    public IEnumerator<int> GetEnumerator()
+    public IEnumerator<string> GetEnumerator()
     {
         foreach (var t in _array)
         {
@@ -19,23 +19,23 @@ public class CustomListInt : IList<int>
         return GetEnumerator();
     }
 
-    public void Add(int item)
+    public void Add(string item)
     {
         Insert(_array.Length, item);
     }
 
     public void Clear()
     {
-        var newArray = Array.Empty<int>();
+        var newArray = Array.Empty<string>();
         _array = newArray;
     }
 
-    public bool Contains(int item)
+    public bool Contains(string item)
     {
         return _array.Any(a => a == item);
     }
 
-    public void CopyTo(int[] array, int arrayIndex)
+    public void CopyTo(string[] array, int arrayIndex)
     {
         foreach (var t in _array)
         {
@@ -44,9 +44,9 @@ public class CustomListInt : IList<int>
         }
     }
 
-    public bool Remove(int item)
+    public bool Remove(string item)
     {
-        var newArray = new int[_array.Length - 1];
+        var newArray = new string[_array.Length - 1];
         var index = IndexOf(item);
 
         for (var i = index + 1; i < _array.Length; i++)
@@ -62,7 +62,7 @@ public class CustomListInt : IList<int>
     public int Count => _array.Length;
     public bool IsReadOnly => false;
 
-    public int IndexOf(int item)
+    public int IndexOf(string item)
     {
         for (var i = 0; i < _array.Length; i++)
         {
@@ -75,9 +75,9 @@ public class CustomListInt : IList<int>
         return -1;
     }
 
-    public void Insert(int index, int item)
+    public void Insert(int index, string item)
     {
-        var newArray = new int[_array.Length + 1];
+        var newArray = new string[_array.Length + 1];
         newArray[index] = item;
         for (var i = 0; i < index; i++)
         {
@@ -94,7 +94,7 @@ public class CustomListInt : IList<int>
 
     public void RemoveAt(int index)
     {
-        var newArray = new int[_array.Length - 1];
+        var newArray = new string[_array.Length - 1];
         for (var i = 0; i < index; i++)
         {
             newArray[i] = _array[i];
@@ -108,7 +108,7 @@ public class CustomListInt : IList<int>
         _array = newArray;
     }
 
-    public int this[int index]
+    public string this[int index]
     {
         get => _array[index];
         set => _array[index] = value;
