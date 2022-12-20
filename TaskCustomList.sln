@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "CustomList\CustomList.csproj", "{614D1EBD-80FA-45F0-856A-6C82F3DAB747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListTest", "CustomListTest\CustomListTest.csproj", "{90C2E753-F0FD-42B1-B144-58BFDD157A9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListTest", "CustomListTest\CustomListTest.csproj", "{552B4B87-86D4-4DAC-B7EB-FECDD495A9E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{614D1EBD-80FA-45F0-856A-6C82F3DAB747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{614D1EBD-80FA-45F0-856A-6C82F3DAB747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{614D1EBD-80FA-45F0-856A-6C82F3DAB747}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90C2E753-F0FD-42B1-B144-58BFDD157A9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90C2E753-F0FD-42B1-B144-58BFDD157A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90C2E753-F0FD-42B1-B144-58BFDD157A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90C2E753-F0FD-42B1-B144-58BFDD157A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{552B4B87-86D4-4DAC-B7EB-FECDD495A9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552B4B87-86D4-4DAC-B7EB-FECDD495A9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552B4B87-86D4-4DAC-B7EB-FECDD495A9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552B4B87-86D4-4DAC-B7EB-FECDD495A9E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
