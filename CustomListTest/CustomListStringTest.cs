@@ -5,7 +5,7 @@ namespace CustomListTest;
 [TestClass]
 public class CustomListStringTest
 {
-    IList<string> customList = new CustomListString()
+    IList<string> customList = new CustomList<string>
     {
         "Oliver",
         "Jack",
